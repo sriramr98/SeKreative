@@ -1,9 +1,11 @@
 package com.sekreative.sekreative.ui
 
+import android.Manifest
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.crashlytics.android.Crashlytics
+import com.github.florent37.runtimepermission.RuntimePermission.askPermission
 import com.google.firebase.auth.FirebaseAuth
 import com.sekreative.sekreative.R
 import com.sekreative.sekreative.ui.addpost.AddPostFragment
@@ -23,13 +25,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         FeedFragment.newInstance().show()
-
-        btn_logout.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            startActivity<AuthActivity>()
-            finish()
-            return@setOnClickListener
-        }
 
         bottom_navigation.setOnNavigationItemSelectedListener {
             when {
@@ -86,6 +81,6 @@ class MainActivity : AppCompatActivity() {
             transaction.addToBackStack(tag)
         }
         transaction.replace(R.id.frame_main, this, tag)
-        transaction.commit()
+        transaction.commitAllowingStateLoss()
     }
 }
