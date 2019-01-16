@@ -3,4 +3,18 @@
     <string name="feed">Feed</string>
     <string name="add_post">Add Post</string>
     <string name="profile">Profile</string>
+    <string name="hint_number">Phone Number</string>
+    <string name="login">Login</string>
+    <string name="error_number_empty">Number cannot be empty</string>
+    <string name="error_number_length">Number has to be 10 digits</string>
+    
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_login_title">Error logging in</string>
+    <string name="error_login_message">Unable to login using your phone number. Please re-check your number and try
+        again
+    </string>
+    <string name="button_ok">OK</string>
+    <string name="hint_otp">Enter OTP</string>
+    <string name="verify">Verify</string>
 </resources>

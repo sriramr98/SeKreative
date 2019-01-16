@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+                tools:context=".ui.auth.OtpFragment">
+    
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_margin="20dp"
+            android:id="@+id/layout_otp"
+            app:counterEnabled="true"
+            app:counterMaxLength="6"
+            android:layout_centerInParent="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/white"
+            android:hint="@string/hint_otp">
+        
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_otp"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    
+    </com.google.android.material.textfield.TextInputLayout>
+    
+    <ProgressBar
+            android:layout_below="@id/layout_otp"
+            android:layout_margin="12dp"
+            android:id="@+id/pb_otp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:indeterminateTint="@color/colorPrimaryDark"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"/>
+    
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_verify"
+            android:text="@string/verify"
+            android:layout_marginTop="12dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/pb_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+</RelativeLayout>
