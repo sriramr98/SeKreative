@@ -1,11 +1,8 @@
 package com.sekreative.sekreative.ui
 
-import android.Manifest
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.crashlytics.android.Crashlytics
-import com.github.florent37.runtimepermission.RuntimePermission.askPermission
 import com.google.firebase.auth.FirebaseAuth
 import com.sekreative.sekreative.R
 import com.sekreative.sekreative.ui.addpost.AddPostFragment
