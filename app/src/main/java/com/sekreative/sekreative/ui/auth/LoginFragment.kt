@@ -6,15 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.google.firebase.FirebaseException
-import com.google.firebase.auth.PhoneAuthCredential
-import com.google.firebase.auth.PhoneAuthProvider
+
 
 import com.sekreative.sekreative.R
 import com.sekreative.sekreative.utils.onTextChanged
 import com.sekreative.sekreative.utils.text
 import kotlinx.android.synthetic.main.fragment_login.*
-import java.util.concurrent.TimeUnit
+
 
 class LoginFragment : Fragment() {
     private var listener: LoginFragmentInteractionListener? = null
