@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="BottomBarTheme" parent="ThemeOverlay.MaterialComponents.BottomAppBar.Primary">
+    <style name="BottomBarTheme" parent="@style/Widget.MaterialComponents.BottomAppBar">
 
     </style>
 
