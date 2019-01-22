@@ -74,6 +74,6 @@ class MainActivity : AppCompatActivity() {
             transaction.addToBackStack(tag)
         }
         transaction.replace(R.id.frame_main, this, tag)
-        transaction.commit()
+        transaction.commitAllowingStateLoss()
     }
 }
