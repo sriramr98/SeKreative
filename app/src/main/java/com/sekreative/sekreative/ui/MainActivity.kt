@@ -2,9 +2,8 @@ package com.sekreative.sekreative.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
 import androidx.fragment.app.Fragment
-import com.crashlytics.android.Crashlytics
-import com.google.firebase.auth.FirebaseAuth
 import com.sekreative.sekreative.R
 import com.sekreative.sekreative.ui.addpost.AddPostFragment
 import com.sekreative.sekreative.ui.auth.AuthActivity
@@ -15,7 +14,6 @@ import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private val mAuth = FirebaseAuth.getInstance()
     private var currentFragment = FeedFragment.TAG
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +23,7 @@ class MainActivity : AppCompatActivity() {
         FeedFragment.newInstance().show()
 
         btn_logout.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            startActivity<AuthActivity>()
+
             finish()
             return@setOnClickListener
         }
@@ -58,15 +55,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-    }
-
-    override fun onResume() {
-        super.onResume()
-        if (mAuth.currentUser == null) {
-            startActivity<AuthActivity>()
-            finish()
-            return
-        }
     }
 
     override fun onBackPressed() {
