@@ -36,6 +36,10 @@ dependencies {
 
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
     implementation 'com.afollestad.material-dialogs:core:2.0.0-rc7'
+    implementation 'com.github.florent37:runtime-permission:1.0.5'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0-alpha01'
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0-alpha1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0-alpha1'

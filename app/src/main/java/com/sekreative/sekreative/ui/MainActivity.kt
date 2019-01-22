@@ -9,6 +9,7 @@ import com.sekreative.sekreative.ui.addpost.AddPostFragment
 import com.sekreative.sekreative.ui.auth.AuthActivity
 import com.sekreative.sekreative.ui.feed.FeedFragment
 import com.sekreative.sekreative.ui.profile.ProfileFragment
+import com.sekreative.sekreative.utils.Prefs
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 
@@ -21,12 +22,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         FeedFragment.newInstance().show()
-
-        btn_logout.setOnClickListener {
-
-            finish()
-            return@setOnClickListener
-        }
 
         bottom_navigation.setOnNavigationItemSelectedListener {
             when {
@@ -57,6 +52,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        val token = Prefs.getAuthToken()
+        if (token?.isBlank() == true) {
+            startActivity<AuthActivity>()
+            finish()
+        }
+    }
+
     override fun onBackPressed() {
         when (currentFragment) {
             FeedFragment.TAG -> finish()
@@ -74,6 +78,6 @@ class MainActivity : AppCompatActivity() {
             transaction.addToBackStack(tag)
         }
         transaction.replace(R.id.frame_main, this, tag)
-        transaction.commit()
+        transaction.commitAllowingStateLoss()
     }
 }
