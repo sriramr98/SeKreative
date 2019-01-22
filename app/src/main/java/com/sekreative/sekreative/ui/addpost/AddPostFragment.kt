@@ -88,7 +88,7 @@ class AddPostFragment : Fragment() {
             val filePathColumn = arrayOf(MediaStore.Images.Media.DATA)
 
             // Get the cursor
-            val cursor = activity!!.contentResolver.query(selectedImageUri, filePathColumn, null, null, null)
+            val cursor = activity!!.contentResolver.query(selectedImageUri!!, filePathColumn, null, null, null)
             // Move to first row
             cursor!!.moveToFirst()
 

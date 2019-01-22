@@ -43,9 +43,14 @@ class OtpFragment : Fragment() {
         /**
          * Use this factory instance method to instantiate a new fragment
          */
-        fun newInstance() = OtpFragment()
+        fun newInstance(number: String): OtpFragment = OtpFragment().apply {
+            val bundle = Bundle()
+            bundle.putString(KEY_NUMBER, number)
+            arguments = bundle
+        }
 
         const val TAG = "OtpFragment"
+        private const val KEY_NUMBER = "key-number"
     }
 
     /**
