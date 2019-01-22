@@ -17,4 +17,7 @@
     <string name="button_ok">OK</string>
     <string name="hint_otp">Enter OTP</string>
     <string name="verify">Verify</string>
+    <string name="title_permission_required">Permission required</string>
+    <string name="message_permission_required">Please grant the missing permissions to continue</string>
+    <string name="button_no">No</string>
 </resources>
