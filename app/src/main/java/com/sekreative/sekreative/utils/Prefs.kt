@@ -21,4 +21,10 @@ object Prefs {
     }
 
     fun getAuthToken() = mPrefs.getString(KEY_AUTH_TOKEN, "")
+
+    fun clearAuthToken() {
+        mPrefs.edit()
+            .remove(KEY_AUTH_TOKEN)
+            .apply()
+    }
 }

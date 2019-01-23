@@ -23,28 +23,12 @@ class MainActivity : AppCompatActivity() {
 
         FeedFragment.newInstance().show()
 
-        //_____________________________Take this code for bottom ApppBar Integration_______________________________
-
-
-//        bottom_navigation.setOnNavigationItemSelectedListener {
-//            when {
-//                it.itemId == R.id.action_feed -> {
-//                    if (currentFragment != FeedFragment.TAG) {
-//                        FeedFragment.newInstance().show()
-//                        currentFragment = FeedFragment.TAG
-//                    }
-//                    return@setOnNavigationItemSelectedListener true
-//                }
-//                it.itemId == R.id.action_add_post -> {
-//                    if (currentFragment != AddPostFragment.TAG) {
-//                        AddPostFragment.newInstance().show()
-//                        currentFragment = AddPostFragment.TAG
-//                    }
-//                    return@setOnNavigationItemSelectedListener true
-//                }
-//                  else -> return@setOnNavigationItemSelectedListener false
-//            }
-//        }
+        btn_logout.setOnClickListener {
+            Prefs.clearAuthToken()
+            startActivity<AuthActivity>()
+            finish()
+            return@setOnClickListener
+        }
 
     }
 
@@ -57,6 +41,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Custom functionality for onBackPressed
+     */
     override fun onBackPressed() {
         when (currentFragment) {
             FeedFragment.TAG -> finish()
@@ -68,6 +55,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+    /**
+     * Do not create a new instance of the supportFragmentTransaction for your fragment transactions in this activity.
+     * Use this function instead to show a fragment onto screen.
+     */
     private fun Fragment.show(tag: String = "") {
         val transaction = supportFragmentManager.beginTransaction()
         if (tag.isNotBlank()) {
