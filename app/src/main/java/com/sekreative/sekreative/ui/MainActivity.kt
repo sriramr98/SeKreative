@@ -23,32 +23,28 @@ class MainActivity : AppCompatActivity() {
 
         FeedFragment.newInstance().show()
 
-        bottom_navigation.setOnNavigationItemSelectedListener {
-            when {
-                it.itemId == R.id.action_feed -> {
-                    if (currentFragment != FeedFragment.TAG) {
-                        FeedFragment.newInstance().show()
-                        currentFragment = FeedFragment.TAG
-                    }
-                    return@setOnNavigationItemSelectedListener true
-                }
-                it.itemId == R.id.action_add_post -> {
-                    if (currentFragment != AddPostFragment.TAG) {
-                        AddPostFragment.newInstance().show()
-                        currentFragment = AddPostFragment.TAG
-                    }
-                    return@setOnNavigationItemSelectedListener true
-                }
-                it.itemId == R.id.action_profile -> {
-                    if (currentFragment != ProfileFragment.TAG) {
-                        ProfileFragment.newInstance().show()
-                        currentFragment = ProfileFragment.TAG
-                    }
-                    return@setOnNavigationItemSelectedListener true
-                }
-                else -> return@setOnNavigationItemSelectedListener false
-            }
-        }
+        //_____________________________Take this code for bottom ApppBar Integration_______________________________
+
+
+//        bottom_navigation.setOnNavigationItemSelectedListener {
+//            when {
+//                it.itemId == R.id.action_feed -> {
+//                    if (currentFragment != FeedFragment.TAG) {
+//                        FeedFragment.newInstance().show()
+//                        currentFragment = FeedFragment.TAG
+//                    }
+//                    return@setOnNavigationItemSelectedListener true
+//                }
+//                it.itemId == R.id.action_add_post -> {
+//                    if (currentFragment != AddPostFragment.TAG) {
+//                        AddPostFragment.newInstance().show()
+//                        currentFragment = AddPostFragment.TAG
+//                    }
+//                    return@setOnNavigationItemSelectedListener true
+//                }
+//                  else -> return@setOnNavigationItemSelectedListener false
+//            }
+//        }
 
     }
 

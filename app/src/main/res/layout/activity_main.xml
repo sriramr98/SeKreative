@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.MainActivity">
-    
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.BottomNavigationView"
-            android:layout_alignParentBottom="true"
-            android:background="@color/colorPrimary"
-            app:itemIconTint="@android:color/white"
-            app:itemTextColor="@android:color/white"
-            app:menu="@menu/main_bottom_menu"/>
-    
+
+    <com.google.android.material.button.MaterialButton
+            android:text="Logout"
+            android:id="@+id/btn_logout"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
     <FrameLayout
-            android:layout_above="@id/bottom_navigation"
+            android:layout_above="@id/bottom_app_bar"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_gravity="top"
             android:layout_alignParentTop="true"
@@ -27,4 +24,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     
-</RelativeLayout>
+
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottom_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:backgroundTint="@color/colorPrimary"
+            app:fabAlignmentMode="center"
+
+            app:navigationIcon="@drawable/ic_more_vert_appbar_24dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            app:tint="@color/colorSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_white_24"
+            app:layout_anchor="@id/bottom_app_bar"
+            app:backgroundTint="@color/colorPrimaryDark"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
