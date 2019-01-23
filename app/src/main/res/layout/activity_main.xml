@@ -13,6 +13,16 @@
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
+
+    <FrameLayout
+            android:layout_above="@id/bottom_app_bar"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_gravity="top"
+            android:layout_alignParentTop="true"
+            android:id="@+id/frame_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     
 
 

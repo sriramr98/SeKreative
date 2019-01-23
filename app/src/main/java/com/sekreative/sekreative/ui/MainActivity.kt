@@ -21,6 +21,59 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        FeedFragment.newInstance().show()
 
+        //_____________________________Take this code for bottom ApppBar Integration_______________________________
+
+
+//        bottom_navigation.setOnNavigationItemSelectedListener {
+//            when {
+//                it.itemId == R.id.action_feed -> {
+//                    if (currentFragment != FeedFragment.TAG) {
+//                        FeedFragment.newInstance().show()
+//                        currentFragment = FeedFragment.TAG
+//                    }
+//                    return@setOnNavigationItemSelectedListener true
+//                }
+//                it.itemId == R.id.action_add_post -> {
+//                    if (currentFragment != AddPostFragment.TAG) {
+//                        AddPostFragment.newInstance().show()
+//                        currentFragment = AddPostFragment.TAG
+//                    }
+//                    return@setOnNavigationItemSelectedListener true
+//                }
+//                  else -> return@setOnNavigationItemSelectedListener false
+//            }
+//        }
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val token = Prefs.getAuthToken()
+        if (token?.isBlank() == true) {
+            startActivity<AuthActivity>()
+            finish()
+        }
+    }
+
+    override fun onBackPressed() {
+        when (currentFragment) {
+            FeedFragment.TAG -> finish()
+            AddPostFragment.TAG, ProfileFragment.TAG -> {
+                FeedFragment.newInstance().show()
+                currentFragment = FeedFragment.TAG
+            }
+            else -> super.onBackPressed()
+        }
+    }
+
+    private fun Fragment.show(tag: String = "") {
+        val transaction = supportFragmentManager.beginTransaction()
+        if (tag.isNotBlank()) {
+            transaction.addToBackStack(tag)
+        }
+        transaction.replace(R.id.frame_main, this, tag)
+        transaction.commitAllowingStateLoss()
     }
 }
