@@ -2,6 +2,8 @@ package com.sekreative.sekreative.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 
 import androidx.fragment.app.Fragment
 import com.sekreative.sekreative.R
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(bottom_app_bar)
 
         FeedFragment.newInstance().show()
 
@@ -67,5 +70,17 @@ class MainActivity : AppCompatActivity() {
         }
         transaction.replace(R.id.frame_main, this, tag)
         transaction.commitAllowingStateLoss()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.bottomappbar_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when(item!!.itemId) {
+            R.id.profile -> ProfileFragment.newInstance().show(ProfileFragment.TAG)
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

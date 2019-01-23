@@ -7,7 +7,10 @@
     <string name="login">Login</string>
     <string name="error_number_empty">Number cannot be empty</string>
     <string name="error_number_length">Number has to be 10 digits</string>
-    
+    <string name="profile_description">Life is like an ice cream, Enjoy it before it melts.Lorem ipsum dolor sit
+        amet,consectetur adipisicing elit,sed do eiusmod tempor incididunt pariatur
+    </string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="error_login_title">Error logging in</string>
