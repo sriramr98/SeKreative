@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.sekreative.sekreative.R
 import com.sekreative.sekreative.ui.addpost.AddPostFragment
 import com.sekreative.sekreative.ui.auth.AuthActivity
+import com.sekreative.sekreative.ui.bottomnavigation.BottomNavigationDrawerFragment
 import com.sekreative.sekreative.ui.feed.FeedFragment
 import com.sekreative.sekreative.ui.profile.ProfileFragment
 import com.sekreative.sekreative.utils.Prefs
@@ -23,6 +24,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(bottom_app_bar)
+
+        bottom_app_bar.setNavigationOnClickListener {
+            BottomNavigationDrawerFragment.newInstance().show(BottomNavigationDrawerFragment.TAG)
+        }
 
         FeedFragment.newInstance().show()
 
